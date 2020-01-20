@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Immobili;
+use App\Models\Photos;
 use App\Models\Tipologie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +12,13 @@ use Illuminate\Support\Facades\Storage;
 class ImmobiliController extends Controller
 {
     //
+
+    public function frontend_index(){
+        $sql ="SELECT i.id,titolo,descrizione,immagine,tipologia,prezzo,metri,
+        camere,bagni,indirizzo,prezzo  from immobili as i INNER JOIN tipologie as t ON i.tipo_id = t.id";
+        $res = DB::select($sql);
+        return view('immobili',['immobili'=>$res]);
+    }
     public function index(Request $request){
 
         // $queryBuilder = Immobili::orderBy('id','DESC');
@@ -95,5 +103,33 @@ class ImmobiliController extends Controller
        $immobile->save();
 
        return redirect()->route('immobili');
+    }
+
+    //recupero tutte le photo
+    public function photo($id){
+        $images = Photos::where('immobile_id',$id)
+        ->get();
+        return view('admin.photo',['id_immobile'=>$id,'images'=>$images]);
+    }
+
+    public function savephoto($id, Request $request){
+        $photo = new Photos();
+        $photo->immobile_id = $id;
+
+        $file = request()->file('immagine');
+        $filename = $file->store(env('ALBUM_THUMB_DIR'));
+        $photo->path = $filename;
+
+        $photo->save();
+        $rotta = 'admin/photo/'.$photo->immobile_id;
+
+        return redirect($rotta);
+    }
+
+    public function deletephoto($id){
+        $photo =Photos::find($id);
+        $res = $photo->delete();
+
+        return ''.$res;
     }
 }

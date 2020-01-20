@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Storage;
 class NewsController extends Controller
 {
     //
+    public function frontend_new($id){
+       return view('detailnew');
+    }
+
+    public function frontend_index(){
+        $queryBuilder = News::orderBy('id','DESC');
+        $news = $queryBuilder->get();
+        return view('news',['news'=>$news]);
+    }
     public function index(Request $request){
         $queryBuilder = News::orderBy('id','DESC');
         $news = $queryBuilder->get();

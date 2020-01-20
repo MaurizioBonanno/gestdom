@@ -39,11 +39,9 @@ Route::get('/contatti',function(){
     return view('contatti');
 });
 
-Route::get('/news',function(){
-    return News::all();
-});
+Route::get('/new/{id}','NewsController@frontend_new');
 
-Route::get('/immobili',function(){
-    return Immobili::all();
-});
+Route::get('/news','NewsController@frontend_index');
+
+Route::get('/immobili','ImmobiliController@frontend_index');
 

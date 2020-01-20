@@ -38,8 +38,9 @@
           <td>{{$immobile->prezzo}}</td>
           <td> <img width="100" height="auto" src="{{asset('storage/'.$immobile->immagine)}}" alt="{{$immobile->immagine}}">  </td>
           <td>
-            <a href="immobili/{{$immobile->id}}/edit" class="btn btn-primary btn-small">edit</a>
-          <a href="iimmo_aadim/immobile_delete/{{$immobile->id}}" name="{{$immobile->id}}" class="btn btn-danger btn-small">Delete</a>
+            <a href="photo/{{$immobile->id}}" class="btn btn-primary btn-small">PHOTOS</a>
+          <a href="immobili/{{$immobile->id}}/edit" class="btn btn-primary btn-small">EDIT</a>
+          <a href="iimmo_aadim/immobile_delete/{{$immobile->id}}" name="{{$immobile->id}}" class="btn btn-danger btn-small">DELETE</a>
           </td>
         </tr>
 

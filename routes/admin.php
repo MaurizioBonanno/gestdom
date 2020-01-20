@@ -15,6 +15,8 @@ Route::get('/tipologie/{id}/edit','TipologieController@edit');
 
 Route::get('/immobili','ImmobiliController@index')->name('immobili');
 
+Route::get('/photo/{id}','ImmobiliController@photo');
+
 Route::get('/add_immobile', 'ImmobiliController@new');
 
 Route::get('/immobili/{id}/edit','ImmobiliController@edit');
@@ -39,3 +41,7 @@ Route::patch('/save_new', 'NewsController@savenew');
 Route::patch('/updated_immobile/{id}', 'ImmobiliController@updated');
 
 Route::patch('/saveimmobile', 'ImmobiliController@savenew');
+
+Route::patch('/add_photo/{id}', 'ImmobiliController@savephoto');
+
+Route::delete('/delete_photo/{id}','ImmobiliController@deletephoto');
