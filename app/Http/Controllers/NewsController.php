@@ -11,7 +11,8 @@ class NewsController extends Controller
 {
     //
     public function frontend_new($id){
-       return view('detailnew');
+       $new = News::find($id);
+       return view('detailnew',['new'=>$new]);
     }
 
     public function frontend_index(){

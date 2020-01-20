@@ -13,7 +13,7 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="images/shutterstock_1187239189.jpg"><div class="container">
+              <img src="images/villa.jpg"><div class="container">
                 <div class="carousel-caption">
                   <h1>PAGLIERI</h1>
                   <h3>REAL ESTATE</h3>

@@ -6,18 +6,18 @@
 
     <div class="row">
         @foreach ($news  as $new)
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-               <img src="{{asset('storage/'.$new->immagine)}}" style="width: 100%;height: auto;">
-                  <div class="card-body">
-                    <p class="card-text"> {{$new->titolo}}  <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="/new/{{$new->id}}"> <button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                        </div>
-                    <small class="text-muted">{{$new->created_at}}</small>
-            </div>
-        </div>
 
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
+            <img src="{{asset('storage/'.$new->immagine)}}"  style="width: 100%;height: 180px;">
+            <div class="card-body">
+            <h5 class="card-title">{{$new->titolo}}</h5>
+            <p class="card-text"><a href="{{$new->link}}" target="blank">{{$new->link}}</a></p>
+              <a href="/new/{{$new->id}}" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
         @endforeach
     </div>
 

@@ -45,3 +45,6 @@ Route::get('/news','NewsController@frontend_index');
 
 Route::get('/immobili','ImmobiliController@frontend_index');
 
+Route::get('/casa/{id}','ImmobiliController@casa');
+
+

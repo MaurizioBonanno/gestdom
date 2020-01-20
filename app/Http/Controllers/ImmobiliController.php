@@ -13,6 +13,19 @@ class ImmobiliController extends Controller
 {
     //
 
+    public function casa($id){
+        //recupero le foto
+        $sqlPhoto = "Select * from photos where photos.immobile_id =".$id;
+        $photos=DB::select($sqlPhoto);
+        $sqlImmobile = "SELECT i.id,titolo,descrizione,immagine,tipologia,prezzo,metri,
+        camere,bagni,indirizzo,prezzo  from immobili as i INNER JOIN tipologie as t ON i.tipo_id = t.id where i.id=".$id;
+        $immobile = DB::select($sqlImmobile);
+        //dd($immobile);
+
+        return view('casa',['photos'=>$photos,'casa'=>$immobile[0]]);
+
+    }
+
     public function frontend_index(){
         $sql ="SELECT i.id,titolo,descrizione,immagine,tipologia,prezzo,metri,
         camere,bagni,indirizzo,prezzo  from immobili as i INNER JOIN tipologie as t ON i.tipo_id = t.id";
