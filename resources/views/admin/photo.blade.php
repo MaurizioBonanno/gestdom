@@ -16,7 +16,7 @@
       @foreach ($images as $image)
      <li id="{{$image->id}}">
          <img width="100" height="auto" src="{{asset('/storage/'.$image->path)}}" alt="{{$image->path}}">
-         <a href="delete_photo/{{$image->id}}" name="{{$image->id}}" class="btn btn-danger btn-small">Delete</a>
+         <a href="/admin/delete_photo/{{$image->id}}" name="{{$image->id}}" class="btn btn-danger btn-small">Delete</a>
        </li>
       @endforeach
 </ul>
@@ -28,6 +28,7 @@
 $(function(){
     $('li').on('click','a.btn-danger',function(ele){
         ele.preventDefault();
+        if(confirm('Davvero vuoi cancellare la foto?')){
         var url = $(this).attr('href');
         var id = $(this).attr('name');
         $.ajax(
@@ -46,6 +47,7 @@ $(function(){
                 }
             }
         )
+    }
     });
 });
 </script>

@@ -13,6 +13,8 @@ Route::get('/tipologie','TipologieController@index')->name('index_tipologie');
 
 Route::get('/tipologie/{id}/edit','TipologieController@edit');
 
+Route::patch('/tipologie/add','TipologieController@add');
+
 Route::get('/immobili','ImmobiliController@index')->name('immobili');
 
 Route::get('/photo/{id}','ImmobiliController@photo');

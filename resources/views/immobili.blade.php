@@ -18,6 +18,12 @@
   </style>
 <div class="container marketing" style="padding-top: 5em;">
 
+    <p>
+      <h4>  Non tutti gli Immobili in vendita sono visibili, nel pieno rispetto della volontà dei Clienti.
+<br>
+         Vengono pertanto proposti mediante un'attività di consulenza Personalizzata.</h4>
+     </p>
+
     @foreach ($immobili as $immobile)
 
     <hr class="featurette-divider">

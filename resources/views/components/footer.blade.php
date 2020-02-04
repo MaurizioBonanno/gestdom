@@ -5,6 +5,7 @@
 <footer class="container align-items-end" style="padding-top: 5em;">
     <div class="row justify-content-md-center">
       <div class="col-sm-4">
+          <!--
               <p>
                 Paglieri Team Immobiliare
                   <a href="https://www.facebook.com/Paglieri-Team-Immobiliare-2120029808088169/?view_public_for=2120029808088169" target="_blank">
@@ -14,6 +15,7 @@
                     <i class="fab fa-linkedin"></i>
                   </a>
               </p>
+            -->
       </div>
       <div class="col-sm-4">
         <adress>Via XX Settembre, 1/1 sc.D - 16121 Genova</adress>
@@ -53,7 +55,7 @@
 
         <div class="col-sm-3">
           <img  src="images/remax-collection-horizontal-rgb-wht500x500.png" style="max-height: 50px;"><br>
-          associato: Specialisti immobiliari
+        <!--  associato: Specialisti immobiliari -->
         </div>
    </div>
 </footer>

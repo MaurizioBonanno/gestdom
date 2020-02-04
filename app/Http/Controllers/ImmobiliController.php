@@ -28,7 +28,8 @@ class ImmobiliController extends Controller
 
     public function frontend_index(){
         $sql ="SELECT i.id,titolo,descrizione,immagine,tipologia,prezzo,metri,
-        camere,bagni,indirizzo,prezzo  from immobili as i INNER JOIN tipologie as t ON i.tipo_id = t.id";
+        camere,bagni,indirizzo,prezzo  from immobili as i INNER JOIN tipologie
+         as t ON i.tipo_id = t.id order by i.id desc";
         $res = DB::select($sql);
         return view('immobili',['immobili'=>$res]);
     }
@@ -37,7 +38,8 @@ class ImmobiliController extends Controller
         // $queryBuilder = Immobili::orderBy('id','DESC');
         // $res = $queryBuilder->get();
         $sql ="SELECT i.id,titolo,descrizione,immagine,tipologia,prezzo,metri,
-        camere,bagni,indirizzo,prezzo  from immobili as i INNER JOIN tipologie as t ON i.tipo_id = t.id";
+        camere,bagni,indirizzo,prezzo  from immobili as i INNER JOIN tipologie
+        as t ON i.tipo_id = t.id order by i.id desc";
         $res = DB::select($sql);
         return view('admin.immobili',['immobili'=>$res]);
     }
@@ -141,6 +143,9 @@ class ImmobiliController extends Controller
 
     public function deletephoto($id){
         $photo =Photos::find($id);
+        //recupero il percorso della foto
+        $path = $photo->path;
+        Storage::disk('public')->delete($path);
         $res = $photo->delete();
 
         return ''.$res;

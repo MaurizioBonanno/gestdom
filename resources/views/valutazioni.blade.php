@@ -95,20 +95,20 @@
 
         <div class="col-sm-12" style="text-align: center;">
         <h4>
-           <p>Case di Genova - Le Sorprese di una Città - Una Sapiente commistione di Antico e Design -<br> Case Geniali
+            <p>
+                Liguria - Levante quando la Luce inizia ad Arrivare - Il Posto Perfetto - Una Casa per Lui e per Lei<br>
+                 Famiglia dove il Mare di Casa Ti ricorda chi sei - Mare come arredo
+              </p>
 
-            Eleganza Cosmopolità fra gli Ulivi - Urban Chic - Giardini Privati - Aperture improvvise sull'infinità del Golfo
-        </p>
+              <p>
+                Terrazza con Casa - Attico - Villa con Vista - Dimora a  picco sul mare - Caletta privata - Villa d'epoca - Villa indipendente<br>
 
-        <p>
-            Il Posto Perfetto - Liguria - Una Casa per Lui e per Lei<br>
-            Famiglia dove il Mare di Casa Ti ricorda chi sei - Levante quando la Luce inizia ad Arrivare – Mare come arredo
-        </p>
-        <p>
-            Terrazza con Casa - Attico - Villa con Vista - Dimora a  picco sul mare - Caletta privata - Villa d'epoca - Villa indipendente<br>
+                Villa liberty - Elegante appartamento
+            </p>
+            <p>Case in Riviera - Sorpese in Città- Una Sapiente commistione di Antico e Design -<br> Case Geniali
 
-            Villa liberty -  Elegante appartamento
-        </p>
+                Eleganza Cosmopolita fra gli Ulivi - Urban Chic - Giardini Privati - Aperture improvvise sull'infinità del Golfo
+             </p>
 
     </h4>
 

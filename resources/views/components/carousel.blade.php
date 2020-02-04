@@ -13,7 +13,7 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="images/villa.jpg"><div class="container">
+              <img src="images/villa2.jpg"><div class="container">
                 <div class="carousel-caption">
                   <h1>PAGLIERI</h1>
                   <h3>REAL ESTATE</h3>
@@ -31,12 +31,13 @@
                   <h1>VALUTAZIONI</h1>
                   <p>Per dare il giusto valore all'immobile da vendere</p>
                       <p>
+    <!--
                         <a class="btn btn-lg btn-primary" href="tel:+393471175532 " role="button">
                           <i class="fas fa-phone-square-alt"></i> +39 347.11.755.32
                         </a>
                       </p>
 
-                  <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
+                     <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
 
                 </div>
               </div>
@@ -46,12 +47,13 @@
                 <div class="carousel-caption text-right">
                   <h1>CONSULENZA A 360°</h1>
                   <p>Prima, durante e dopo l'acquisto</p>
+                  <!--
                         <p>
                           <a class="btn btn-lg btn-primary" href="tel:+393471175532  " role="button">
                             <i class="fas fa-phone-square-alt"></i> +39 347.11.755.32
                           </a>
                         </p>
-                  <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
+                     <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
 
                 </div>
               </div>

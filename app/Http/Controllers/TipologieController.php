@@ -31,4 +31,14 @@ class TipologieController extends Controller
         $tipologia = Tipologie::find($id);
         return view('admin.edit_tipo',['tipologia'=>$tipologia]);
     }
+
+    public function add(Request $req){
+        $tipologia = new Tipologie();
+        $tipologia->tipologia = request('tipo');
+        $tipologia->save();
+        //recupero l'ultimo id inserito e lo passo alla risposta
+        $res = Tipologie::all()->last()->id;
+
+        return ''.$res;
+    }
 }

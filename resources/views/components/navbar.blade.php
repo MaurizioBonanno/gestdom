@@ -44,8 +44,7 @@
                 <a class="nav-link " href="news">NEWS</a>
           </li>
         </ul>
-        Paglieri<br>
-        Real Estate
+        <p style="font-size: medium;padding-top: 1em;">PAGLIERI REAL ESTATE</p>
       </div>
     </nav>
   </header>

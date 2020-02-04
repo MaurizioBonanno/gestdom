@@ -22,7 +22,7 @@
       @foreach ($news as $new)
         <tr id="{{$new->id}}">
           <td>{{$new->titolo}}</td>
-          <td>{{$new->descrizione}}</td>
+          <td style="height: 3em; overflow:hidden">{{$new->descrizione}}</td>
         <td> <img width="100" height="auto" src="{{asset($new->path)}}" alt="{{$new->path}}"> </td>
           <td>{{$new->link}}</td>
           <td>

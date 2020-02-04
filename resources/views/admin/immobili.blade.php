@@ -29,7 +29,7 @@
       @foreach ($immobili as $immobile)
         <tr id="{{$immobile->id}}">
           <td>{{$immobile->titolo}}</td>
-          <td>{{$immobile->descrizione}}</td>
+          <td style="height: 3em; overflow:hidden">{{$immobile->descrizione}}</td>
           <td>{{$immobile->tipologia}}</td>
           <td>{{$immobile->metri}}</td>
           <td>{{$immobile->camere}}</td>
@@ -53,7 +53,9 @@
   <script>
     $(function(){
         $('td').on('click','a.btn-danger',function(ele){
+
             ele.preventDefault();
+            if(confirm('Vuoi eliminare Davvero questo immobile?')){
             var url = $(this).attr('href');
             var id = $(this).attr('name');
             $.ajax(
@@ -72,6 +74,7 @@
                     }
                 }
             )
+          }
         });
     });
     </script>
