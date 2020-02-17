@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Storage;
 
 class ImmobiliController extends Controller
 {
-    //
+
 
     public function casa($id){
         //recupero le foto
-        $sqlPhoto = "Select * from photos where photos.immobile_id =".$id;
+        $sqlPhoto = "Select * from photos where photos.immobile_id =".$id." order by position asc";
         $photos=DB::select($sqlPhoto);
         $sqlImmobile = "SELECT i.id,titolo,descrizione,immagine,tipologia,prezzo,metri,
         camere,bagni,indirizzo,prezzo  from immobili as i INNER JOIN tipologie as t ON i.tipo_id = t.id where i.id=".$id;
@@ -122,7 +122,7 @@ class ImmobiliController extends Controller
 
     //recupero tutte le photo
     public function photo($id){
-        $images = Photos::where('immobile_id',$id)
+        $images = Photos::where('immobile_id',$id)->orderBy('position','asc')
         ->get();
         return view('admin.photo',['id_immobile'=>$id,'images'=>$images]);
     }
@@ -139,6 +139,44 @@ class ImmobiliController extends Controller
         $rotta = 'admin/photo/'.$photo->immobile_id;
 
         return redirect($rotta);
+    }
+
+    public function savegallery($id, Request $request){
+
+
+        foreach($request->file('immagine') as $file){
+            $photo = new Photos();
+            $photo->immobile_id = $id;
+            $filename = $file->store(env('ALBUM_THUMB_DIR'));
+            $photo->path = $filename;
+            $photo->save();
+        }
+
+       // $file = request()->file('file');
+
+
+
+
+        $rotta = 'admin/photo/'.$photo->immobile_id;
+
+        return redirect($rotta);
+    }
+
+
+    public function reordergallery(Request $request){
+
+        $count=1;
+        $sql="";
+        foreach( request()->input('id') as $id_photo){
+           $sql.=" photo n".$id_photo." position".$count;
+           $photo = Photos::find($id_photo);
+           $photo->position = $count;
+           $photo->save();
+           $count++;
+        }
+
+        return $sql;
+
     }
 
     public function deletephoto($id){

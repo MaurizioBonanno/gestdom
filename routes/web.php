@@ -48,3 +48,10 @@ Route::get('/immobili','ImmobiliController@frontend_index');
 Route::get('/casa/{id}','ImmobiliController@casa');
 
 
+
+
+
+Auth::routes();
+
+Route::get('/home','TipologieController@index')->name('index_tipologie');
+
