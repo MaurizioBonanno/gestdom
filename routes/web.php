@@ -55,3 +55,7 @@ Auth::routes();
 
 Route::get('/home','TipologieController@index')->name('index_tipologie');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
