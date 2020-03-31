@@ -5,7 +5,6 @@
 <h1>Immobili</h1>
 
 <a class="btn btn-primary" href="add_immobile">AGGIUNGI</a>
-
 <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -27,9 +26,10 @@
         <input type="hidden" name='_token' id='_token' value="{{csrf_token()}}">
 
       @foreach ($immobili as $immobile)
-        <tr id="{{$immobile->id}}">
+        <tr id="id_{{$immobile->id}}">
           <td>{{$immobile->titolo}}</td>
-          <td style="height: 3em; overflow:hidden">{{$immobile->descrizione}}</td>
+          <?php $desc = substr($immobile->descrizione, 0 , 100) ?>
+          <td style="height: 3em; overflow:hidden">{{$desc}}</td>
           <td>{{$immobile->tipologia}}</td>
           <td>{{$immobile->metri}}</td>
           <td>{{$immobile->camere}}</td>
@@ -49,6 +49,8 @@
       </form>
     </tbody>
   </table>
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <script>
     $(function(){
@@ -76,6 +78,24 @@
             )
           }
         });
+
+        //lista immobili ordinabile
+        $('tbody').sortable({
+            items: "tr:not('.home')",
+            placeholder: "ui-state-hightlight",
+            update: function(){
+
+          var ids = $('tbody').sortable("serialize");
+          var url = '/admin/reorder_listimmobili?'+ids;
+          $.get(url,ids,function(data){
+              console.log(data);
+          });
+          console.log(url+'?'+ids);
+      }
+        });
+
+
+        //fine codice
     });
     </script>
 

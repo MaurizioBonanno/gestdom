@@ -29,7 +29,7 @@ class ImmobiliController extends Controller
     public function frontend_index(){
         $sql ="SELECT i.id,titolo,descrizione,immagine,tipologia,prezzo,metri,
         camere,bagni,indirizzo,prezzo  from immobili as i INNER JOIN tipologie
-         as t ON i.tipo_id = t.id order by i.id desc";
+         as t ON i.tipo_id = t.id order by i.sorter asc";
         $res = DB::select($sql);
         return view('immobili',['immobili'=>$res]);
     }
@@ -39,7 +39,7 @@ class ImmobiliController extends Controller
         // $res = $queryBuilder->get();
         $sql ="SELECT i.id,titolo,descrizione,immagine,tipologia,prezzo,metri,
         camere,bagni,indirizzo,prezzo  from immobili as i INNER JOIN tipologie
-        as t ON i.tipo_id = t.id order by i.id desc";
+        as t ON i.tipo_id = t.id order by i.sorter asc";
         $res = DB::select($sql);
         return view('admin.immobili',['immobili'=>$res]);
     }
@@ -187,5 +187,21 @@ class ImmobiliController extends Controller
         $res = $photo->delete();
 
         return ''.$res;
+    }
+
+    public function reorderlistimmobili(Request $request){
+
+        $count=1;
+        $sql="";
+        foreach( request()->input('id') as $id){
+           $sql.=" photo n".$id." position".$count;
+           $immobile = Immobili::find($id);
+           $immobile->sorter = $count;
+           $immobile->save();
+           $count++;
+        }
+
+        return $sql;
+
     }
 }

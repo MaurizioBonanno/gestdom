@@ -11,6 +11,8 @@ use App\Http\Controllers\TipologieController;
 
     Route::post('/reorder_gallery', 'ImmobiliController@reordergallery');
 
+    Route::get('/reorder_listimmobili', 'ImmobiliController@reorderlistimmobili');
+
 
     Route::get('/tipologie','TipologieController@index')->name('index_tipologie')->middleware('auth');
 
